@@ -8,12 +8,22 @@ readme = "README.md"
 rust-version = "1.59"
 
 [dependencies]
-embedded-hal = "0.2.7"
-panic-halt = "0.2.0"
+#panic-halt = "0.2.0"
 riscv = "0.10.0"
 riscv-rt = "0.11.0"
+display-interface = "0.4"
+display-interface-spi = "0.4"
+embedded-graphics = "0.7"
+embedded-hal = "0.2"
 st7789 = "0.7.0"
-
+spin = "0.9.4"
+globals = "1.0.5"
+ch32v20x-hal = { path = "ch32v20x-hal" ,features = ["device-selected","ch32v203"]}
+good_memory_allocator = "0.1.7"
+#
+[dependencies.lazy_static]
+version = "1.0"
+features = ["spin_no_std"]
 # this lets you use `cargo fix`!
 [[bin]]
 name = "lcd-st7789"
